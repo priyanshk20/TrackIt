@@ -1,53 +1,55 @@
-:root{
-    --bg-primary-body: #fafbfd;
+:root {
+    --bg-body: #fafbfd;
     --bg-content: #ffffff;
-    --bg-hover:#f4f4f4;
-    --color-txt:#172b4d;
-    --nav-height:70px;
+    --bg-hover: #f4f4f4;
+
+    --color-txt: #172b4d;
+
+    --nav-height: 70px;
+
+    --shadow: 0 0 30px 0 rgb(82 63 105 / 5%);
 }
 
-.dark{
-    --bg-primary-body: #151515;
+.dark {
+    --bg-body: #151515;
     --bg-content: #242526;
-    --bg-hover:#dcdcdc;
-    --color-txt:#151f28;
+    --bg-hover: #151f28;
+
+    --color-txt: #dcdcdc;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-
-a{
+a {
     text-decoration: none;
 }
 
-
-
-body{
-    font-family: 'Montserrat', sans-serif;
+body {
+    font-family: "Montserrat", sans-serif;
     position: relative;
-    background-color: var(--bg-primary-body);
+    background-color: var(--bg-body);
     color: var(--color-txt);
     padding-top: calc(var(--nav-height) + 30px);
     font-size: 16px;
 }
 
-.container{
+.container {
     max-width: 1600px;
     margin: auto;
 }
 
-.content{
-    padding: 25px;
+.content {
+    padding: 15px;
 }
 
-/* top nav css  */
-.nav-wrapper{
+/* top nav */
+.nav-wrapper {
     background-color: var(--bg-content);
-    box-shadow: 0 0 30px 0 rgb(82 63 105 / 5%);
+    box-shadow: var(--shadow);
     position: fixed;
     top: 0;
     width: 100%;
@@ -55,29 +57,26 @@ body{
     z-index: 99;
 }
 
-.nav{
+.nav {
     height: var(--nav-height);
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.logo{
+.logo {
     color: var(--color-txt);
     font-size: 2rem;
-    font-weight:900;
+    font-weight: 900;
 }
-.logo i{
+
+.logo i {
     color: red;
 }
 
-/* nav css end  */
-
-/* darkmode switch  */
-
-.darkmode-switch{
-    --width:60px;
-    --height:20px;
+.darkmode-switch {
+    --width: 60px;
+    --height: 20px;
     width: var(--width);
     height: var(--height);
     background-color: lightslategray;
@@ -86,25 +85,25 @@ body{
     cursor: pointer;
 }
 
-.darkmode-switch span{
+.darkmode-switch span {
     display: inline-grid;
     place-items: center;
     height: calc(var(--height) * 2);
-    width: calc(var(--width) * 2);
+    width: calc(var(--height) * 2);
     border-radius: 50%;
     background-color: var(--color-txt);
     color: var(--bg-content);
     font-size: 2rem;
     position: absolute;
     left: 0;
-    height: calc(-1 * var(--height) / 2);
+    top: calc(-1 * var(--height) / 2);
     transition: left 0.3s ease-in-out;
 }
 
-.darkmode-swith.dark span{
-    left: calc(var(--width) - var(--height) / 2);
-    background-color: var(--bg-primary-body);
-    columns: var(--color-txt);
+.darkmode-switch.dark span {
+    left: calc(var(--width) - var(--height) * 2);
+    background-color: var(--bg-body);
+    color: var(--color-txt);
 }
 
 .darkmode-switch span .bxs-moon {
@@ -118,5 +117,4 @@ body{
 .darkmode-switch.dark span .bxs-sun {
     display: none;
 }
-
-/* darkmode switch end  */
+/* end top nav */
